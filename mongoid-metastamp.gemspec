@@ -24,4 +24,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency("rspec", "~> 2.6")
   s.add_development_dependency("database_cleaner", "~> 1.4.0")
   s.add_development_dependency("pry", "~> 0.10.0")
+  s.add_development_dependency 'simplecov', ">= 0.10.0"
+  s.add_development_dependency 'codeclimate-test-reporter', '0.4.7'
 end

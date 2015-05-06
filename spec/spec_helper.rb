@@ -1,3 +1,17 @@
+require 'codeclimate-test-reporter'
+require 'simplecov'
+
+formatters = [SimpleCov::Formatter::HTMLFormatter]
+if ENV['CODECLIMATE_REPO_TOKEN']
+  formatters << CodeClimate::TestReporter::Formatter
+  CodeClimate::TestReporter.start
+end
+
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[*formatters]
+SimpleCov.start do
+  add_filter '/spec/'
+end
+
 require "rubygems"
 require "bundler/setup"
 require "zonebie"
