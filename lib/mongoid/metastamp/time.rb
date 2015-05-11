@@ -37,6 +37,7 @@ module Mongoid #:nodoc:
           {
             time:         time,
             normalized:   normalized_time(local_time),
+            cweek:        local_time.to_date.cweek,
             year:         local_time.year,
             month:        local_time.month,
             day:          local_time.day,
